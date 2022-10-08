@@ -1,56 +1,77 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Budget App
 
-> Description the project.
-
+> This application is developed using RoR CRUD capabilities. It allows users to create budgets and post them in a web interface. This app uses Ruby On Rails (RoR), Tailwind, RSPec, Capybara, Devise, CanCanCan, and Bullet.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby On Rails (RoR)
+- PostegreSQL
+- Tailwind
+- RSpec
+- Capybara
+- Devise
+- CanCanCan
+- Bullet
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
-
+[Live Demo Link]()
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- Ruby 3.1.2 or newer
+- Rails 7.0.4 or newer
+- Git
+- NPM
+- PostgreSQL
+- Modern web browser
+
 ### Setup
+
+git clone git@github.com:Addisu87/budget-app.git
+cd budget_app/
 
 ### Install
 
+bundle install
+npm install
+
 ### Usage
 
-### Run tests
+#### Create the database
+
+rails db:create
+
+#### Generate Schema
+
+- To push the migration into the database
+  rails db:migrate
+
+#### Starting up the webserver
+
+rails server
+
+### Testing
+
+rspec --format documentation
 
 ### Deployment
 
-
+Heroku
 
 ## Authors
 
-👤 **Author1**
+👤 **Addisu Haile**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-Addisu87-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/Addisu87)
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-AddisuTedla-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/AddisuTedla)
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-addisu_tedla-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://linkedin.com/in/addisu-tedla/)
 
 ## 🤝 Contributing
 
@@ -64,12 +85,11 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- Original design idea by Gregoire Vella on Behance
+- My supportive family 😊
+- Microverse
 - Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
