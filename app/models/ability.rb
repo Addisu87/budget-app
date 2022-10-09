@@ -10,8 +10,8 @@ class Ability
 
     return unless user.present?
 
-    # can :manage, :Category, author_id: user_id
-    # can :manage, :Purchase, author_id: user_id
-    # can :destroy, :all if user.is? :admin
+    can :edit, User, author_id: user.id
+    can :destroy, :Category, author_id: user.id
+    can :destroy, :Purchase, author_id: user.id
   end
 end
