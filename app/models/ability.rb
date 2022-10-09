@@ -5,14 +5,13 @@ class Ability
 
   def initialize(user)
     user ||= User.new
+    can :read, :all
+    can :create, :all
 
     return unless user.present?
 
-    can :read, :all
-
-    return unless user.admin?
-
-    can :manage, :Category, user: user
-    can :manage, :Purchase, user:
+    # can :manage, :Category, author_id: user_id
+    # can :manage, :Purchase, author_id: user_id
+    # can :destroy, :all if user.is? :admin
   end
 end

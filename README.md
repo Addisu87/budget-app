@@ -14,6 +14,7 @@
 - Devise
 - CanCanCan
 - Bullet
+- Tailwindcss
 
 ## Live Demo (if available)
 
