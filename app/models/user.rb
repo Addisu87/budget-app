@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :purchases
 
   validates :name, presence: true
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
 end
