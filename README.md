@@ -15,6 +15,7 @@
 - CanCanCan
 - Bullet
 - Tailwindcss
+- Hotwire-livereload
 
 ## Live Demo (if available)
 

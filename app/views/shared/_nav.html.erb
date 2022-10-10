@@ -1,9 +1,25 @@
-<nav className="flex sm:justify-center space-x-4">
-  {[
-  ['Home', '/dashboard'],
-  ['Category', '/category'],
-  ['Purchases', '/purchases'],
-  ].map(([title, url]) => (
-  <a href={url} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{title}</a>
-  ))}
+<nav class="bg-blue border-gray-200 px-2">
+  <div class="container mx-auto flex flex-wrap items-center justify-between">
+    <a href="#" class="flex">
+      <span class="self-center text-lg font-semibold whitespace-nowrap">Buget-App</span>
+    </a>
+    <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
+      <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+        <% if user_signed_in? %>
+          <li><%= link_to 'Home', root_path, class: "bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded"%>Home</li>
+          <li><%= link_to 'Categories', categories_path, class:"text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0"%>Category</li>
+          <li><%= link_to 'Purchases', purchases_path, class:"text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0"%>Purchase</li>
+        <% end %>
+      </ul>
+      <ul>
+        <% if user_signed_in? %>
+          <li class="nav-item">Logged in as <strong><%= current_user.email %></strong>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'%></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class: 'navbar-link' %>  |
+            <%= link_to "Sign in", new_user_session_path, class: 'navbar-link' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </nav>
