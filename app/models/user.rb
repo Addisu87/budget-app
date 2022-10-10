@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
 
-  # def is?(requested_role)
-  #   role == requested_role.to_s
-  # end
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
 end
