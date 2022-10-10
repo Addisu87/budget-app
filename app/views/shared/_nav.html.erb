@@ -22,7 +22,7 @@
         </ul>
         <ul>
           <li>Logged in as <strong><%= current_user.email %></strong>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" %></li>
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" %></li>
         <% else %>
           <li><%= link_to "Sign up", new_user_registration_path, class: "bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"%>  |
             <%= link_to "Sign in", new_user_session_path, class: "bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" %></li>
