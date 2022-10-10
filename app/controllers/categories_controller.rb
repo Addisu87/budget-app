@@ -1,12 +1,10 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
-  before_action :authenticate_user!
   load_and_authorize_resource
 
   # GET /categories or /categories.json
   def index
-    # @categories = Category.all
-    @categories = current_user.categories
+    @categories = Category.where(author_id: current_user.id).order(created_at: :desc)
   end
 
   # GET /categories/1 or /categories/1.json
@@ -18,7 +16,6 @@ class CategoriesController < ApplicationController
   # GET /categories/new
   def new
     @category = Category.new
-    @user = current_user
   end
 
   # GET /categories/1/edit
@@ -26,9 +23,8 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
-    @user = current_user
     @category = Category.new(category_params)
-    @category.user = @user
+    @category.user_id = current_user.id
 
     respond_to do |format|
       if @category.save

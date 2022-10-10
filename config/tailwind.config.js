@@ -2,6 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   mode: 'jit',
+  purge: ['./app/**/*.html.erb'],
   content: [
     './public/*.html',
     './app/helpers/**/*.rb',

@@ -1,10 +1,13 @@
 <p style="color: green"><%= notice %></p>
-
 <%= render @category %>
-
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
-</div>
+<form>
+  <label class="block">
+    <div>
+      <%= link_to "Edit this category", edit_category_path(@category),  class: "links" %> |
+      <%= link_to "Back to categories", categories_path, class: "links" %>
+      <div class="mt-3">
+        <%# <%= link_to 'Destroy', @category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %> %>
+      </div>
+    </div>
+  </label>
+</form>

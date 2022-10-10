@@ -4,30 +4,18 @@
 
 @layer components {
   .btn-primary {
-    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75;
+    @apply py-2 px-4 bg-lime-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75;
+  }
+
+  .btn-secondary {
+    @apply py-2 px-4 bg-sky-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75 mt-7;
   }
 
   .btn-destroy {
-    @apply py-2 px-4 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75;
+    @apply py-2 px-4 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75 -mt-7;
   }
 
-  .container {
-    @apply max-w-lg mx-auto mt-16 text-center rounded overflow-hidden shadow-lg p-10;
-  }
-
-  .header {
-    @apply mb-4 text-3xl font-black;
-  }
-
-  .par {
-    @apply text-lg leading-snug;
-  }
-
-  .label {
-    @apply w-60;
-  }
-
-  .filed {
-    @apply w-60;
+  .links {
+    @apply text-blue-800;
   }
 }

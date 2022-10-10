@@ -1,14 +1,15 @@
 class Category < ApplicationRecord
-  belongs_to :author
+  belongs_to :author, class_name: 'User'
   has_many :purchases, dependent: :destroy
 
   validates :name, presence: true
+  validates :icon, presence: true
 
-  def total_records
-    records.size
+  def total_purchases
+    purchases.size
   end
 
-  def total_records_amount
-    records.sum(:amount)
+  def total_price
+    purchases.sum(:amount)
   end
 end

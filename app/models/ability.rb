@@ -11,7 +11,7 @@ class Ability
     return unless user.present?
 
     can :edit, User, author_id: user.id
-    can :destroy, :Category, author_id: user.id
-    can :destroy, :Purchase, author_id: user.id
+    can :manage, :Category, author_id: user.id
+    can :manage, :Purchase, author_id: user.id
   end
 end

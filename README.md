@@ -16,6 +16,7 @@
 - Bullet
 - Tailwindcss
 - Hotwire-livereload
+- Bootstrap
 
 ## Live Demo (if available)
 

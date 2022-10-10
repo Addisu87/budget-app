@@ -1,12 +1,12 @@
 class PurchasesController < ApplicationController
   before_action :set_purchase, only: %i[show edit update destroy]
-  before_action :authenticate_user!
   load_and_authorize_resource
 
   # GET /purchases or /purchases.json
   def index
-    # @purchases = Purchase.all
-    @purchases = current_user.purchases
+    @category = Category.find(params['category_id'])
+    @purchases = Purhase.where(author_id: current_user.id, category_id: params['category_id']).order(created_at: :desc)
+    @total_price = @purchases.sum(:amount)
   end
 
   # GET /purchases/1 or /purchases/1.json
@@ -14,6 +14,7 @@ class PurchasesController < ApplicationController
 
   # GET /purchases/new
   def new
+    @category = Category.find(params['category_id'])
     @purchase = Purchase.new
   end
 
@@ -22,13 +23,14 @@ class PurchasesController < ApplicationController
 
   # POST /purchases or /purchases.json
   def create
-    @user = current_user
+    @category = Category.find(params['category_id'])
     @purchase = Purchase.new(purchase_params)
-    @purchase.user = @user
+    @purchase.user_id = current_user.id
+    @purchase.category_id = params['category_id']
 
     respond_to do |format|
       if @purchase.save
-        format.html { redirect_to purchase_url(@purchase), notice: 'Purchase was successfully created.' }
+        format.html { redirect_to category_purchases_path(@purchase), notice: 'Purchase was successfully created.' }
         format.json { render :show, status: :created, location: @purchase }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,9 +41,10 @@ class PurchasesController < ApplicationController
 
   # PATCH/PUT /purchases/1 or /purchases/1.json
   def update
+    set_purchase
     respond_to do |format|
       if @purchase.update(purchase_params)
-        format.html { redirect_to purchase_url(@purchase), notice: 'Purchase was successfully updated.' }
+        format.html { redirect_to category_purchase_path(@purchase), notice: 'Purchase was successfully updated.' }
         format.json { render :show, status: :ok, location: @purchase }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,10 +55,11 @@ class PurchasesController < ApplicationController
 
   # DELETE /purchases/1 or /purchases/1.json
   def destroy
+    @category = Category.find(params['category_id'])
     @purchase.destroy
 
     respond_to do |format|
-      format.html { redirect_to purchases_url, notice: 'Purchase was successfully destroyed.' }
+      format.html { redirect_to category_purchase_path(@category), notice: 'Purchase was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
