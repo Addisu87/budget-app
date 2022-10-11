@@ -1,11 +1,16 @@
 <p style="color: green"><%= notice %></p>
-<h1>Purchases</h1>
-<div id="purchases">
-  <% @purchases.each do |purchase| %>
-    <%= render purchase %>
-    <p>
-      <%= link_to "Show this purchase", purchase %>
-    </p>
-  <% end %>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <h1>Purchases</h1>
+    </div>
+    <div class="col">
+      <%= link_to "Add purchase", new_category_purchase_path, class: "btn-secondary" %>
+    </div>
+  </div>
+  <div id="purchases">
+    <% @purchases.each do |purchase| %>
+      <%= render purchase %>
+    <% end %>
+  </div>
 </div>
-<%= link_to "Add purchase", new_category_purchase_path, class: "btn-secondary" %>
