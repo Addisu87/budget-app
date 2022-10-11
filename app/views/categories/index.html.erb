@@ -1,11 +1,10 @@
 <p style="color: green"><%= notice %></p>
 <h1 class="mb-4 text-3xl font-black">Categories</h1>
 <div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category, class: "links" %>
-    </p>
+  <%= render 'shared/category_table' do %>
+    <% @categories.each do |category| %>
+      <%= render category %>
+    <% end %>
   <% end %>
 </div>
 <div class="mt-3">

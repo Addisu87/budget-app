@@ -1,16 +1,21 @@
 <p style="color: green"><%= notice %></p>
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
+<div class="">
+  <div class="group flex items-center">
+    <div class="ltr:ml-3 rtl:mr-3">
       <h1>Purchases</h1>
+      <%= link_to fa_icon("plus", class: "text-white"), new_category_purchase_path, class: "btn-secondary" %>
+      <div>
+        <h3>
+          Total Price: <%= "$#{@total_price}" %>
+        </h3>
+      </div>
     </div>
-    <div class="col">
-      <%= link_to "Add purchase", new_category_purchase_path, class: "btn-secondary" %>
+    <div id="purchases">
+      <%# <% render 'shared/purchase_table' do %> %>
+        <%# <%= render @purchases %> %>
+        <%# <% end %> %>
+        <% @purchases.each do |purchase| %>
+          <%= render purchase %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div id="purchases">
-    <% @purchases.each do |purchase| %>
-      <%= render purchase %>
-    <% end %>
-  </div>
-</div>

@@ -1,27 +1,14 @@
 <div id="<%= dom_id purchase %>">
-  <div class="p-10">
-    <table class="table-auto min-w-full">
-      <thead class="bg-gray-800 text-gray-300" >
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Category</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><%= purchase.name %></td>
-          <td>$<%= purchase.amount %></td>
-          <td><%= purchase.category_id %></td>
-          <td>
-            <ul class="flex">
-              <li><%= link_to "Show", category_purchases_path, class: "btn-secondary" %></li>
-              |
-              <li><%= button_to "Destroy", @purchase, method: :delete, class: "btn-destroy" %></li>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <tr>
+    <td><%= purchase.name %></td>
+    <td>$<%= purchase.amount %></td>
+    <td><%= purchase.category_id %></td>
+    <td>
+      <ul class="flex">
+        <li><%= link_to "Show", category_purchases_path, class: "btn-secondary" %></li>
+        |
+        <li><%= button_to "Destroy", @purchase, method: :delete, class: "btn-destroy" %></li>
+      </ul>
+    </td>
+  </tr>
+</div>

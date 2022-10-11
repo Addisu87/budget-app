@@ -18,4 +18,8 @@
   .links {
     @apply text-blue-800;
   }
+
+  .inputs {
+    @apply text-blueborder-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500;
+  }
 }
