@@ -1,4 +1,4 @@
-<nav class="bg-sky-900 border-sky-500  px-2">
+<nav class="flex justify-center space-x-4 bg-sky-900 px-2">
   <div class="container mx-auto flex flex-wrap items-center justify-between">
     <a href="#" class="flex">
       <span class="self-center text-lg font-semibold whitespace-nowrap text-slate-200">Buget-App</span>
@@ -7,11 +7,9 @@
       <span class="sr-only">Open main menu</span>
       <%= link_to fa_icon("bars"), class: "text-white" %>
     </button>
-    <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
+    <div class="hidden md:block w-full md:w-auto lg:flex" id="mobile-menu">
       <% if user_signed_in? %>
-        <ul class="text-white-800">
-          <li><%= link_to 'Category', root_path %></li>
-        </ul>
+        <%= link_to 'Category', root_path, class:"font-medium px-3 py-2 text-white rounded-lg hover:bg-slate-100 hover:text-slate-900" %>
         <ul>
           <li>Logged in as <strong><%= current_user.email %></strong>
             <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" %></li>
