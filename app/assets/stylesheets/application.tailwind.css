@@ -4,7 +4,7 @@
 
 @layer components {
   .btn-primary {
-    @apply py-2 px-4 bg-lime-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75;
+    @apply border border-green-500 bg-green-500 text-white rounded-lg py-3 font-semibold;
   }
 
   .btn-secondary {
@@ -20,6 +20,32 @@
   }
 
   .inputs {
-    @apply text-blueborder-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500;
+    @apply border rounded-lg py-3 px-3 bg-gray-700 border-gray-700 placeholder-gray-500;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .table {
+    border-spacing: 0 15px;
+  }
+
+  i {
+    font-size: 1rem !important;
+  }
+
+  .table tr {
+    border-radius: 20px;
+  }
+
+  tr td:nth-child(n + 5),
+  tr th:nth-child(n + 5) {
+    border-radius: 0 0.625rem 0.625rem 0;
+  }
+
+  tr td:nth-child(1),
+  tr th:nth-child(1) {
+    border-radius: 0.625rem 0 0 0.625rem;
   }
 }

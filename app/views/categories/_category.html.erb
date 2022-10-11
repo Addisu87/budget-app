@@ -1,13 +1,15 @@
-<tr class="odd:bg-gray even:bg-blue-100">
-  <td><%= category.name %></td>
-  <td><%= category.icon %></td>
-  <td>
-    <li class="flex">
-      <%= link_to "Show", category, class: "links", class: "btn-secondary" %>
-    </li>
-    | 
-    <li>
-      <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
-    </li>
+<tr class="bg-gray-800 ">
+  <td class="p-3"><%= category.name %></td>
+  <td class="p-3"><%= category.icon %></td>
+  <td class="p-3">
+    <ul class="text-gray-400 hover:text-gray-100 ml-2 flex">
+      <li class="material-icons-round text-base">
+        <%= link_to fa_icon("eye"), category, class: "btn-secondary" %>
+      </li>
+      | 
+      <li >
+        <%= link_to fa_icon("trash") , category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
+      </li>
+    </ul>
   </td>
 </tr>

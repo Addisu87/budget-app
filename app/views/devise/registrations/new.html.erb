@@ -1,29 +1,25 @@
-<h2>Sign up</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <form class="block">
-    <div class="field">
-      <%= f.label :name, class: "block text-sm font-medium text-slate-700"%><br />
-      <%= f.text_field :name, placeholder: 'full name', class: "inputs" %>
-    </div>
-    <div class="field">
-      <%= f.label :email, class: "block text-sm font-medium text-slate-700"%><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputs" %>
-    </div>
-    <div class="field">
-      <%= f.label :password , class: "block text-sm font-medium text-slate-700"%>
-      <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "inputs" %>
-    </div>
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "inputs" %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Sign up", class: "btn-primary" %>
-    </div>
-  <% end %>
-</form>
-<%= render "devise/shared/links" %>
+  <div class="flex items-center justify-center h-screen">
+    <div class="bg-gray-800 flex flex-col w-80 border border-gray-900 rounded-lg px-8 py-10">
+      <div class="text-white mt-10">
+        <h1 class="font-bold text-4xl">Sign Up</h1>
+        <p class="font-semibold">Let's create your account!</p>
+        <br />
+      </div>
+      <form class="flex flex-col space-y-8 mt-10">
+        <%= f.text_field :name, type: "text", placeholder: "Full name", class: "border rounded-lg py-3 px-3 bg-gray-700 border-gray-700 placeholder-gray-500" %><br />
+        <%= f.email_field :email, type: "email", placeholder: "Email", class: "border rounded-lg py-3 px-3 bg-gray-700 border-gray-700 placeholder-gray-500"%><br />
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, type: "password", placeholder: "password", class: "border rounded-lg py-3 px-3 bg-gray-700 border-gray-700 placeholder-gray-500 mb-3" %><br />
+        <%= f.password_field :password_confirmation, type: "password", placeholder: "password-confirmation", class: "border rounded-lg py-3 px-3 bg-gray-700 border-gray-700 placeholder-gray-500 mb-3" %><br />
+        <button>
+          <%= f.submit "Sign up", class: "border border-blue-500 bg-blue-500 text-white rounded-lg py-3 px-3 font-semibold mb-3"%>
+        </button>
+      <% end %>
+    </form>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
