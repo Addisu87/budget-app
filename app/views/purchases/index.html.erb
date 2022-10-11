@@ -1,21 +1,23 @@
-<p style="color: green"><%= notice %></p>
-<div class="">
-  <div class="group flex items-center">
-    <div class="ltr:ml-3 rtl:mr-3">
-      <h1>Purchases</h1>
-      <%= link_to fa_icon("plus", class: "text-white"), new_category_purchase_path, class: "btn-secondary" %>
-      <div>
-        <h3>
-          Total Price: <%= "$#{@total_price}" %>
-        </h3>
+<div class="flex items-center justify-center min-h-screen bg-gray-900">
+  <div class="col-span-12">
+    <div class="overflow-hidden lg:overflow-visible">
+      <p style="color: green"><%= notice %></p>
+      <div class="mt-3 flex-start">
+        <h1 class="mb-4 text-3xl font-black text-white">Purchases</h1>
+        <%= link_to fa_icon("plus"), new_category_purchase_path, class: "btn-secondary" %>
+        <div class="text-white">
+          <h3>
+            Total Price: <%= "$#{@total_price}" %>
+          </h3>
+        </div>
+      </div>
+      <div id="purchases">
+        <%= link_to 'shared/purchase_table' do %>
+          <% render @purchases %>
+          <%# <% @purchases.each do |purchase| %> %>
+            <%# <%= render purchase %> %>
+          <% end %>
+        </div>
       </div>
     </div>
-    <div id="purchases">
-      <%# <% render 'shared/purchase_table' do %> %>
-        <%# <%= render @purchases %> %>
-        <%# <% end %> %>
-        <% @purchases.each do |purchase| %>
-          <%= render purchase %>
-        <% end %>
-      </div>
-    </div>
+  </div>

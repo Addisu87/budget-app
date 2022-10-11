@@ -1,14 +1,16 @@
-<div id="<%= dom_id purchase %>">
-  <tr>
-    <td><%= purchase.name %></td>
-    <td>$<%= purchase.amount %></td>
-    <td><%= purchase.category_id %></td>
-    <td>
-      <ul class="flex">
-        <li><%= link_to "Show", category_purchases_path, class: "btn-secondary" %></li>
-        |
-        <li><%= button_to "Destroy", @purchase, method: :delete, class: "btn-destroy" %></li>
-      </ul>
-    </td>
-  </tr>
-</div>
+<tr  class="bg-gray-800">
+  <td class="p-3"><%= purchase.name %></td>
+  <td class="p-3 font-bold">$<%= purchase.amount %></td>
+  <td class="p-3"><%= purchase.category_id %></td>
+  <td class="p-3">
+    <ul class="text-gray-400 hover:text-gray-100 ml-2 flex">
+      <li class="material-icons-round text-base">
+        <%= link_to fa_icon("eye"), category_purchases_path, class: "btn-secondary" %>
+      </li>
+      | 
+      <li >
+        <%= link_to fa_icon("trash") , @purchase, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
+      </li>
+    </ul>
+  </td>
+</tr>
