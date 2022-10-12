@@ -4,7 +4,7 @@ class HomesController < ApplicationController
     return unless user_signed_in?
 
     respond_to do |format|
-      format.html { redirect_to categories_path, notice:  }
+      format.html { redirect_to categories_path, notice: }
     end
   end
 end

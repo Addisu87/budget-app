@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Purchase, type: :feature do
-  before :each do
+RSpec.describe 'Testing purchases', type: :feature do
+  before do
     @user = User.create(
       name: 'Addisu',
       email: 'addisu@gmail.com',
@@ -19,7 +19,7 @@ RSpec.describe Purchase, type: :feature do
       author_id: @user.id
     )
 
-    visit purchases_path
+    visit category_purchases_path
   end
 
   it 'show a created purchase' do

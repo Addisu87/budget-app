@@ -1,11 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe 'the signin process', type: :feature do
-  before :each do
+RSpec.describe 'categories integrations', type: :feature do
+  before(:each) do
     @user = User.create(
-      name: 'Addisu', 
+      name: 'Addisu',
       email: 'addisu@gmail.com',
-      password: '123456')
+      password: '123456'
+    )
 
     visit new_user_session_path
     fill_in 'Email', with: @user.email
@@ -13,8 +14,8 @@ RSpec.describe 'the signin process', type: :feature do
     click_button('Log in')
 
     @category = Category.new(
-      name: 'approval-icon',
-      icon: 'nick',
+      name: 'Transportation',
+      icon: 'plane',
       author_id: @user.id
     )
 
