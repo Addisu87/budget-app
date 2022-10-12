@@ -4,11 +4,11 @@
   <td class="p-3"><%= purchase.category_id %></td>
   <td class="p-3">
     <a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
-      <%= link_to fa_icon("eye"), category_purchases_path, class: "btn-secondary" %>
+      <%= button_to fa_icon("eye"), category_purchases_path, class: "btn-secondary" %>
     </a>
     | 
     <a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
-      <%= link_to fa_icon("trash") , category_purchases_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
+      <%= button_to fa_icon("trash") , category_purchases_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
     </a>
   </td>
 </tr>
