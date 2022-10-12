@@ -10,12 +10,10 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render 'shared/nav' %>
-    <div>
+    <main class="container mx-auto ">
+      <%= render 'shared/nav' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-    </div>
-    <main>
       <%= yield %>
     </main>
   </body>

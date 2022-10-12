@@ -1,28 +1,27 @@
 require 'rails_helper'
 
-RSpec.describe Purchase, type: :feature do
+RSpec.describe 'the signin process', type: :feature do
   before :each do
     @user = User.create(
-      name: 'Addisu',
+      name: 'Addisu', 
       email: 'addisu@gmail.com',
-      password: '123456'
-    )
+      password: '123456')
 
     visit new_user_session_path
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: @user.password
     click_button('Log in')
 
-    @purchase = Purchase.new(
-      name: 'Ball',
-      amount: 13.20,
+    @category = Category.new(
+      name: 'approval-icon',
+      icon: 'nick',
       author_id: @user.id
     )
 
-    visit purchases_path
+    visit categories_path
   end
 
-  it 'show a created purchase' do
-    expect(page).to have_content(@purchase.name)
+  it 'show a created category' do
+    expect(page).to have_content(@category.name)
   end
 end

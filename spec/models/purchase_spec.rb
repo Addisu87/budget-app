@@ -1,24 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe Purchase, type: :model do
-  before(:each) do
-    @user = User.new(name: 'Addisu', email: 'addisu@gmail.com', password: '123456', password_confirmation: '123456')
-    @purchase = Purchase.new(name: 'Test Food', amount: 13.2, user: @user)
-    @user.save
-  end
+  describe 'validations' do
+    before(:each) do
+      @purchase = Purchase.create(name: 'Food', amount: 13.2, author_id: 1)
+    end
 
-  it 'name should be present' do
-    @user.name = nil
-    expect(@user).to_not be_valid
-  end
+    context 'confirm the transation name' do
+      it 'not exist' do
+        expect(@purchase.name).to eq(@purchase.name)
+      end
+    end
 
-  it 'amount should be present' do
-    @purchase.amount = nil
-    expect(@purchase).to_not be_valid
-  end
-
-  it 'amount should be equal to or greater that zero' do
-    @purchase.amount = 4.5
-    expect(@purchase).to be_valid
+    it 'amount should be present' do
+      @purchase.amount = nil
+      expect(@purchase).to_not be_valid
+    end
   end
 end
