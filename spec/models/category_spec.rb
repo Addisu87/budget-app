@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Category, type: :model do
   before(:each) do
     @user = User.new(name: 'Addisu', email: 'addisu@gmail.com', password: '123456', password_confirmation: '123456')
-    @category = Category.new(name: 'delete-icon', icon: 'trash', user: @user)
+    @category = Category.new(name: 'delete-icon', icon: 'trash', author: @user)
+    @user.save
   end
 
   it 'it is valid with valid attributes' do

@@ -4,6 +4,7 @@ RSpec.describe Purchase, type: :model do
   before(:each) do
     @user = User.new(name: 'Addisu', email: 'addisu@gmail.com', password: '123456', password_confirmation: '123456')
     @purchase = Purchase.new(name: 'Test Food', amount: 13.2, user: @user)
+    @user.save
   end
 
   it 'name should be present' do

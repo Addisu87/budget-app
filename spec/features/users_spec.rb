@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Users', type: :feature do
   before(:each) do
     @user = User.new(name: 'Addisu', email: 'addisu@gmail.com', password: '123456', password_confirmation: '123456')
+    @user.save
   end
 
   it 'is valid with a name' do
