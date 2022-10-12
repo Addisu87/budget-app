@@ -12,10 +12,10 @@
         <%= link_to 'Category', root_path, class:"font-medium px-3 py-2 text-white rounded-lg hover:bg-slate-100 hover:text-slate-900" %>
         <ul>
           <li>Logged in as <strong><%= current_user.email %></strong>
-            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" %></li>
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "bg-sky-500 hover:bg-sky-600 active:bg-white-700 focus:outline-none focus:ring focus:ring-sky-300" %></li>
         <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path, class: "bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300"%>  |
-            <%= link_to "Sign in", new_user_session_path, class: "bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300" %></li>
+          <li><%= link_to "Sign up", new_user_registration_path, class: "bg-sky-500 hover:bg-sky-600 active:bg-s-700 focus:outline-none focus:ring focus:ring-sky-300"%>  |
+            <%= link_to "Sign in", new_user_session_path, class: "bg-sky-500 hover:bg-sky-600 active:bg-sky-700 focus:outline-none focus:ring focus:ring-sky-300" %></li>
         <% end %>
       </ul>
     </div>
