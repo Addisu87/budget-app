@@ -6,7 +6,11 @@
   { 
     title: 'Transportation',
     icon: 'https://airspace-africa.com/wp-content/uploads/2021/08/ethiopian-fleet.gif'
-   }  
+   } ,
+   { 
+    title: 'Food',
+    icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/330px-Good_Food_Display_-_NCI_Visuals_Online.jpg'
+    } 
   ]%>
 <%= form_with(model: category, class: 'contents') do |form| %>
   <div class="bg-gray-800 flex flex-col w-90 border border-gray-900 rounded-lg px-8 py-10">
@@ -34,7 +38,7 @@
             <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioBgHoverButton">
               <li>
                 <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <input id="default-radio-4" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                  <input id="default-radio-4" type="radio" name=<%=category[:icon]%> value=<%=category[:icon]%> name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                   <img class="rounded-full h-12 w-12  object-cover" src=<%= category[:icon]%> alt=<%= category[:icon]%>>
                   <label for="default-radio-4" class="ml-2 w-full text-sm font-medium text-gray-900 rounded dark:text-gray-300"><%= category[:title]%></label>
                 </div>
@@ -43,13 +47,10 @@
           <%end%>
         </div>
       </div>
-      <br />
       <%= form.hidden_field :author_id, value: current_user.id %>
       <%= form.submit class: "btn-primary" %>
     </form>
   <% end %>
   <br />
   <%= link_to "Back", categories_path, class: "links" %>
-</div>
-</div>
 </div>
