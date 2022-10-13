@@ -4,6 +4,4 @@ Rails.application.routes.draw do
   resources :categories do 
     resources :purchases
   end
-
-  get '/categories/:category_id/purchases/', to: 'purchases#index', as: 'category_purchases_path'
 end

@@ -17,11 +17,11 @@
   <td class="p-3">
     <ul class="text-gray-400 hover:text-gray-100 ml-2 flex">
       <li class="material-icons-round text-base">
-        <%= button_to fa_icon("eye"), category, class: "btn-secondary" %>
+        <%= link_to fa_icon("eye"), category, class: "btn-secondary" %>
       </li>
       | 
       <li >
-        <%= button_to fa_icon("trash") , category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
+        <%= link_to fa_icon("trash") , category, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
       </li>
     </ul>
   </td>

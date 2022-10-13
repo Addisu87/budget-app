@@ -4,11 +4,11 @@
   <td class="p-3"> <%= purchase.category_id %></td>
   <td class="p-3 flex">
     <a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
-      <%= button_to fa_icon("eye"), category_purchases_path, class: "btn-secondary" %>
+      <%= link_to fa_icon("eye"), category_purchase_path(purchase.category_id, purchase.id), class: "btn-secondary" %>
     </a>
     | 
     <a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
-      <%= button_to fa_icon("trash") , category_purchases_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
+      <%= link_to fa_icon("trash"), category_purchase_path(purchase.category_id, purchase.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-destroy" %>
     </a>
   </td>
 </tr>
