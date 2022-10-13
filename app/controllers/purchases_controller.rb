@@ -20,7 +20,6 @@ class PurchasesController < ApplicationController
 
   # POST /purchases or /purchases.json
   def create
-    # @category = Category.find(params[:category_id])
     @purchase = Purchase.new(purchase_params)
     @purchase.author_id = current_user.id
     @purchase.category_id = params[:category_id]
