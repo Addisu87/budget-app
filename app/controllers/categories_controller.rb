@@ -38,6 +38,7 @@ class CategoriesController < ApplicationController
 
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
+    set_category
     respond_to do |format|
       if @category.update(category_params)
         format.html { redirect_to category_url(@category), notice: 'Category was successfully updated.' }
@@ -68,6 +69,6 @@ class CategoriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def category_params
-    params.require(:category).permit(:name, :icon, :author_id)
+    params.require(:category).permit(:name, :icon)
   end
 end

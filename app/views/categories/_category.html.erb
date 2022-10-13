@@ -1,6 +1,13 @@
 <tr class="bg-gray-800 ">
-  <td class="p-3"><%= category.icon %></td>
   <td class="p-3 flex justify-evenly" >
+    <div class="flex">
+      <%= link_to category_purchases_path(category_id: category.id) do %>
+        <%= category.icon %>
+        <%= fa_icon "chevron-circle-right", class: "text-slate-100" %>
+      <% end %>
+    </div>
+  </td>
+  <td class="p-3">
     <p><%= category.name %></p>
     <strong><%= category.total_purchases_amount %></strong>
   </td>
