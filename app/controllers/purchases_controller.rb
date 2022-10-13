@@ -4,7 +4,6 @@ class PurchasesController < ApplicationController
 
   # GET /purchases or /purchases.json
   def index
-    # @category = Category.find(params['category_id'])
     @purchases = Purchase.where(author_id: current_user.id, category_id: params['category_id']).order(created_at: :desc)
     @total_price = @purchases.sum(:amount)
   end
@@ -14,7 +13,6 @@ class PurchasesController < ApplicationController
 
   # GET /purchases/new
   def new
-    #@category = Category.find(params['category_id'])
     @purchase = Purchase.new
   end
 
@@ -73,6 +71,6 @@ class PurchasesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def purchase_params
-    params.require(:purchase).permit(:name, :amount, :user_id, :category_id)
+    params.require(:purchase).permit(:name, :amount, :author_id, :category_id)
   end
 end
