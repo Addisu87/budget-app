@@ -17,6 +17,7 @@
 - Tailwindcss
 - Hotwire-livereload
 - Bootstrap
+- Flowbite
 
 ## Live Demo (if available)
 
