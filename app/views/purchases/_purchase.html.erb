@@ -1,11 +1,8 @@
 <tr class="bg-gray-800">
   <td class="p-3"><%= purchase.name %></td>
   <td class="p-3 font-bold">$<%= purchase.amount %></td>
-  <td class="p-3"><%= purchase.category_id %> <%= link_to new_category_purchases_path(category_id: params['category_id']) do %>
-      <h2><%= "$#{purchase.amount}" %></h2>
-    <% end %>
-  </td>
-  <td class="p-3">
+  <td class="p-3"> <%= purchase.category_id %></td>
+  <td class="p-3 flex">
     <a href="#" class="text-gray-400 hover:text-gray-100 mr-2">
       <%= button_to fa_icon("eye"), category_purchases_path, class: "btn-secondary" %>
     </a>

@@ -4,7 +4,7 @@ class PurchasesController < ApplicationController
 
   # GET /purchases or /purchases.json
   def index
-    @purchases = Purchase.where(author_id: current_user.id, category_id: params['category_id']).order(created_at: :desc)
+    @purchases = Purchase.where(author_id: current_user.id, category_id: params[:category_id]).order(created_at: :desc)
   end
 
   # GET /purchases/1 or /purchases/1.json
@@ -20,10 +20,10 @@ class PurchasesController < ApplicationController
 
   # POST /purchases or /purchases.json
   def create
-    @category = Category.find(params['category_id'])
+    # @category = Category.find(params[:category_id])
     @purchase = Purchase.new(purchase_params)
     @purchase.author_id = current_user.id
-    @purchase.category_id = params['category_id']
+    @purchase.category_id = params[:category_id]
 
     respond_to do |format|
       if @purchase.save
@@ -52,7 +52,7 @@ class PurchasesController < ApplicationController
 
   # DELETE /purchases/1 or /purchases/1.json
   def destroy
-    @category = Category.find(params['category_id'])
+    @category = Category.find(params[:category_id])
     @purchase.destroy
 
     respond_to do |format|
@@ -68,12 +68,8 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.find(params[:id])
   end
 
-  def set_category
-    @category = Category.find(params[:category_id])
-  end
-
   # Only allow a list of trusted parameters through.
   def purchase_params
-    params.require(:purchase).permit(:name, :amount, :author_id, :category_id)
+    params.require(:purchase).permit(:name, :amount)
   end
 end

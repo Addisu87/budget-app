@@ -7,11 +7,6 @@
         <div>
           <%= link_to fa_icon("plus", class: "text-slate-100"), new_category_purchase_path, class: "btn-secondary" %>
         </div>
-        <div class="text-slate-100">
-          <h3>
-            Total Price: <%= "$#{@total_price}" %>
-          </h3>
-        </div>
       </div>
       <div id="purchases">
         <%= render 'shared/purchase_table' do %>
