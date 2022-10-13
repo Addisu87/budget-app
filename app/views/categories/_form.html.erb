@@ -1,5 +1,15 @@
-<%= form_with(model: category) do |form| %>
-  <div class="bg-gray-800 flex flex-col w-80 border border-gray-900 rounded-lg px-8 py-10">
+<% catagories = [
+  {
+    title: 'Electronics', 
+    icon: 'https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-14-pro-max-.jpg'
+  },
+  { 
+    title: 'Transportation',
+    icon: 'https://airspace-africa.com/wp-content/uploads/2021/08/ethiopian-fleet.gif'
+   }  
+  ]%>
+<%= form_with(model: category, class: 'contents') do |form| %>
+  <div class="bg-gray-800 flex flex-col w-90 border border-gray-900 rounded-lg px-8 py-10">
     <div class="text-white mt-10">
       <h1 class="font-bold text-4xl">New Category</h1>
       <br />
@@ -15,11 +25,31 @@
       </div>
     <% end %>
     <form class="flex flex-col space-y-8 mt-10">
-      <%= form.text_field :name, type: "text", placeholder: "Name", class: "border rounded-lg py-3 px-3 bg-gray-400 border-gray-700 placeholder-gray-500" %><br />
-      <%= form.text_field :icon, type: "text", placeholder: "icon", class: "border rounded-lg py-3 px-3 bg-gray-400 border-gray-700 placeholder-gray-500" %><br />
+      <%= form.text_field :name, type: "text", placeholder: "Name", class: "border rounded-lg py-3 px-3 bg-gray-400 border-gray-700 placeholder-gray-500" %>
+      <div class="my-5 flex flex-col gap-4">
+        <button id="dropdownRadioBgHoverButton" data-dropdown-toggle="dropdownRadioBgHover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Icons<svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        <!-- Dropdown menu -->
+        <div id="dropdownRadioBgHover" class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+          <% catagories.each do |category|%>
+            <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioBgHoverButton">
+              <li>
+                <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                  <input id="default-radio-4" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                  <img class="rounded-full h-12 w-12  object-cover" src=<%= category[:icon]%> alt=<%= category[:icon]%>>
+                  <label for="default-radio-4" class="ml-2 w-full text-sm font-medium text-gray-900 rounded dark:text-gray-300"><%= category[:title]%></label>
+                </div>
+              </li>
+            </ul>
+          <%end%>
+        </div>
+      </div>
+      <br />
+      <%= form.hidden_field :author_id, value: current_user.id %>
       <%= form.submit class: "btn-primary" %>
     </form>
   <% end %>
   <br />
   <%= link_to "Back", categories_path, class: "links" %>
+</div>
+</div>
 </div>

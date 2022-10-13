@@ -5,7 +5,6 @@ class PurchasesController < ApplicationController
   # GET /purchases or /purchases.json
   def index
     @purchases = Purchase.where(author_id: current_user.id, category_id: params['category_id']).order(created_at: :desc)
-    @total_price = @purchases.sum(:amount)
   end
 
   # GET /purchases/1 or /purchases/1.json
@@ -67,6 +66,10 @@ class PurchasesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_purchase
     @purchase = Purchase.find(params[:id])
+  end
+
+  def set_category
+    @category = Category.find(params[:category_id])
   end
 
   # Only allow a list of trusted parameters through.
