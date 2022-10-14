@@ -15,7 +15,6 @@
 - CanCanCan
 - Bullet
 - Tailwindcss
-- Hotwire-livereload
 - Bootstrap
 - Flowbite
 
