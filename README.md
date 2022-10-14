@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Budget App
 
 > This application is developed using RoR CRUD capabilities. It allows users to create budgets and post them in a web interface. This app uses Ruby On Rails (RoR), Tailwind, RSPec, Capybara, Devise, CanCanCan, and Bullet.
