@@ -5,14 +5,14 @@
 ## Built With
 
 - Ruby On Rails (RoR)
-- PostegreSQL
+- PostgreSQL
 - Tailwind
 - RSpec
 - Capybara
 - Devise
 - CanCanCan
 - Bullet
-- Tailwindcss
+- TailwindCSS
 - Bootstrap
 - Flowbite
 
