@@ -18,7 +18,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://budget-app-new.herokuapp.com/)
+[Live Demo Link](https://budget-app-production-dd6b.up.railway.app/)
 
 ## Getting Started
 
