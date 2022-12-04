@@ -11,7 +11,7 @@ Rails.application.configure do
   end
 
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << "budget.up.railway.app"
+  Rails.application.config.hosts << "budget.up.railway.app"
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
