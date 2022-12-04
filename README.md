@@ -18,7 +18,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://budget-app-production-dd6b.up.railway.app/)
+[Live Demo Link](https://budget.up.railway.app/)
 
 ## Getting Started
 
