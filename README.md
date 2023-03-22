@@ -1,6 +1,6 @@
 # Budget App
 
-> This application is developed using RoR CRUD capabilities. It allows users to create budgets and post them in a web interface. This app uses Ruby On Rails (RoR), Tailwind, RSPec, Capybara, Devise, CanCanCan, and Bullet.
+> It is a comprehensive project that leverages many useful tools and frameworks. With Ruby On Rails, I quickly create web applications with CRUD capabilities, making it an efficient choice for building a budget app like SmartCoin. Tailwind and Flowbite provide UI components and styling that make the app visually appealing and user-friendly. RSpec and Capybara help me to write and execute automated tests, ensuring the app's reliability and reducing the risk of bugs. Devise and CanCanCan offer security features, such as authentication and authorization, to protect users' information and data. Lastly, Bullet provides performance optimization, helping me to identify and resolve any potential bottlenecks in the app's code.
 
 ## Built With
 
